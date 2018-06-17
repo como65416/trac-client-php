@@ -135,7 +135,7 @@ class Client
      * @param string $username username
      * @param string $comment comment
      */
-    public function reassignOwner($ticket_id, $username, $comment = '')
+    public function reassignUser($ticket_id, $username, $comment = '')
     {
         $this->tracApiHandler->call("ticket.update", [
             $ticket_id,
