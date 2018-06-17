@@ -22,13 +22,14 @@ class Client
     }
 
     /**
-     * [getOwnerTicketIds description]
+     * get user own ticket id
+     *
      * @param string $username target username
      * @param array $statuses array of status
      * @param integer $limit max ticket amount
      * @return array array of ticket id
      */
-    public function getOwnerTicketIds($username, array $statuses, $limit = 100)
+    public function getUserTicketIds($username, array $statuses, $limit = 100)
     {
         $query_params = [];
         $query_params[] = "owner=" . $username;
