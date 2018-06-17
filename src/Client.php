@@ -337,4 +337,18 @@ class Client
         $data = base64_decode($response['__jsonclass__'][1]);
         file_put_contents($save_path, $data);
     }
+
+    /**
+     * delete the attachment from ticket
+     *
+     * @param int $ticket_id ticket id
+     * @param string $filename file name
+     */
+    public function deleteAttachment($ticket_id, $filename)
+    {
+        $response = $this->tracApiHandler->call("ticket.deleteAttachment", [
+            $ticket_id,
+            $filename
+        ]);
+    }
 }
