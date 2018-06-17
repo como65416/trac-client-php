@@ -110,11 +110,16 @@ resolve the ticket
 
 - `$option` avaliable option could not same on different trac system  (it is different based on trac setting)
 
+```php
+$ticket_id = 1;
+$tracClient->resolveTicket($ticket_id, 'close ticket', 'fixed');
+```
+
 ### reopenTicket($ticket_id, $comment = '')
 
 reopen the ticket
 
-```
+```php
 $ticket_id = 1;
 $tracClient->reopenTicket($ticket_id, 'reopen the ticket');
 ```
@@ -141,7 +146,7 @@ $tracClient->addComment($ticket_id, 'it is great');
 
 get comments
 
-```
+```php
 $ticket_id = 1;
 $comments = $tracClient->getComments($ticket_id);
 ```
@@ -150,7 +155,7 @@ $comments = $tracClient->getComments($ticket_id);
 
 list the ticket's attachments
 
-```
+```php
 $ticket_id = 1;
 $attachments = $tracClient->listAttachments($ticket_id);
 ```
@@ -159,7 +164,7 @@ $attachments = $tracClient->listAttachments($ticket_id);
 
 upload a attachment to the ticket
 
-```
+```php
 $ticket_id = 1;
 $filename = 'example.xml';
 $description = 'demo xml';
@@ -171,9 +176,19 @@ $tracClient->uploadAttachment($ticket_id, $filename, $description, $file_path)
 
 download the attachment from the ticket
 
-```
+```php
 $ticket_id = 1;
 $filename = 'example.xml';
 $save_path = '/tmp/example.xml';
 $tracClient->downloadAttachment($ticket_id, $filename, $save_path)
+```
+
+### deleteAttachment($ticket_id, $filename)
+
+delete the attachment from ticket
+
+```php
+$ticket_id = 1;
+$filename = 'example.xml';
+$tracClient->deleteAttachment($ticket_id, $filename)
 ```
