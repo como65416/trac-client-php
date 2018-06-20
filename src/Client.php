@@ -198,7 +198,7 @@ class Client
     /**
      * add comment to the ticket
      *
-     * @param string $username username
+     * @param string $ticket_id ticket id
      * @param string $comment comment
      */
     public function addComment($ticket_id, $comment)
