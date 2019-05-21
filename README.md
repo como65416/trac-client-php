@@ -22,7 +22,7 @@ $api_url = "http://trac.local/login/jsonrpc";
 $username = '<your username>';
 $password = '<your password>';
 
-$tracClient = new tracClient($api_url, $username, $password);
+$tracClient = new TracClient($api_url, $username, $password);
 $ticket_id = $tracClient->createTicket('my first ticket', 'ticket content', [
     'owner' => 'bob',
     'cc' => 'alice, web',
